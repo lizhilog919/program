@@ -1,0 +1,11 @@
+*.*~
+.DS_Store
+*.apk
+*.ap_
+.gradle/
+.metadata
+.idea/
+build/
+
+
+
