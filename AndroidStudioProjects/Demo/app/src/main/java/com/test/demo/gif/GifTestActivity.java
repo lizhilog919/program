@@ -22,5 +22,4 @@ public class GifTestActivity extends AppCompatActivity {
         mImageView = (GifImageView) findViewById(R.id.gif);
         mImageView.setImageResource(R.drawable.gif_test);
     }
-
 }
