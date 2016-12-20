@@ -6,9 +6,11 @@ import android.widget.Toast;
 
 import com.test.demo.R;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
+import okio.BufferedSink;
 import okio.BufferedSource;
 import okio.Okio;
 
@@ -29,6 +31,20 @@ public class OkioActivity extends AppCompatActivity {
             String result = bufferedSource.readUtf8();
             bufferedSource.close();
             Toast.makeText(this,result,Toast.LENGTH_SHORT).show();
+
+            File file = new File(getFilesDir() + "/test.txt");
+            if(!file.exists()){
+                file.createNewFile();
+            }
+            BufferedSink bufferedSink = Okio.buffer(Okio.sink(file));
+            bufferedSink.writeUtf8("lizhi test");
+            bufferedSink.writeUtf8("\nxxxx");
+            bufferedSink.close();
+
+            BufferedSource source = Okio.buffer(Okio.source(new File(getFilesDir() + "/test.txt")));
+            Toast.makeText(this,source.readUtf8(),Toast.LENGTH_SHORT).show();
+            source.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
