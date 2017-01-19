@@ -2,14 +2,16 @@ package com.test.demo.gif;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.test.demo.R;
-
-import pl.droidsonroids.gif.GifImageView;
 
 public class GifTestActivity extends AppCompatActivity {
 
-    private GifImageView mImageView;
+    private ImageView mImageView;
+    private ImageView mImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +21,10 @@ public class GifTestActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        mImageView = (GifImageView) findViewById(R.id.gif);
-        mImageView.setImageResource(R.drawable.gif_test);
+        mImageView = (ImageView) findViewById(R.id.gif);
+        mImage = (ImageView) findViewById(R.id.image);
+        Glide.with(this).load("http://image.res.meizu.com/image/igrowth/5dbc237796a24cf8aee516fb3da3a8aez")
+                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                .into(mImageView);
     }
 }
