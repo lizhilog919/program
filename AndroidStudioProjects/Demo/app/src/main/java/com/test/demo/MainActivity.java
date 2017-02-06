@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         List<HashMap<String,String>> list = new ArrayList<>();
         list.add(getHashMap("GifTest","COM.TEST.GIF"));
         list.add(getHashMap("OkioTest","COM.TEST.OKIO"));
+        list.add(getHashMap("RetrofitTest","COM.TEST.RETROFIT"));
         return list;
     }
 

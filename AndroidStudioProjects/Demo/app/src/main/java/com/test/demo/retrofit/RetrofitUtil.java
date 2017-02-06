@@ -4,10 +4,14 @@ import android.util.Log;
 
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
+import rx.Subscriber;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
 
 /**
  * Created by lizhi
@@ -18,20 +22,30 @@ public class RetrofitUtil {
     public static void doRequest(){
         Retrofit.Builder builder = new Retrofit.Builder();
         builder.baseUrl("https://api.github.com/");
-        //builder.addConverterFactory(new GsonConverterFactory.create());
+        builder.client(new OkHttpClient());
+        builder.addConverterFactory(GsonConverterFactory.create());
+        builder.addCallAdapterFactory(RxJavaCallAdapterFactory.create());
         Retrofit retrofit = builder.build();
         RequestService requestService = retrofit.create(RequestService.class);
-        retrofit2.Call<List<Repo>> repos = requestService.getRepoList("lizhilog919");
-        repos.enqueue(new Callback<List<Repo>>() {
-            @Override
-            public void onResponse(Call<List<Repo>> call, Response<List<Repo>> response) {
-                Log.v("xx","xx");
-            }
+        Observable<List<Repo>> r = requestService.getRepoList2("lizhilog919");
 
-            @Override
-            public void onFailure(Call<List<Repo>> call, Throwable t) {
-                Log.v("xx","error");
-            }
-        });
+        r.subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<List<Repo>>() {
+                    @Override
+                    public void onCompleted() {
+                        Log.v("xx", "xx");
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.v("xx", "xx");
+                    }
+
+                    @Override
+                    public void onNext(List<Repo> repos) {
+                        Log.v("xx", "xx");
+                    }
+                });
     }
 }

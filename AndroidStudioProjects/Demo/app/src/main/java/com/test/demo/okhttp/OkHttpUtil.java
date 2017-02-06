@@ -52,16 +52,16 @@ public class OkHttpUtil {
         builder.authenticator(new Authenticator() {
             @Override
             public Request authenticate(Route route, Response response) throws IOException {
-                //401情况下出发
-                //FIXME: 17-1-19 
+                //401情况下触发
+                //FIXME: 17-1-19
                 //TODO 获取最新token
                 FormBody requestBody = (FormBody) response.request().body();
                 FormBody.Builder builder = new FormBody.Builder();
                 for (int i = 0; i < requestBody.size(); i++) {
-                    if(requestBody.name(i).equals("access_token")){
-                        builder.add(requestBody.name(i),"");
-                    }else{
-                        builder.add(requestBody.name(i),requestBody.value(i));
+                    if (requestBody.name(i).equals("access_token")) {
+                        builder.add(requestBody.name(i), "");
+                    } else {
+                        builder.add(requestBody.name(i), requestBody.value(i));
                     }
                 }
                 Request.Builder requestBuilder = response.request().newBuilder().method(response.request().method(), builder.build());
@@ -71,16 +71,16 @@ public class OkHttpUtil {
         Request.Builder requestBuilder = new Request.Builder();
         requestBuilder.cacheControl(new CacheControl.Builder().onlyIfCached().build());
         HttpUrl.Builder httpBuilder = new HttpUrl.Builder();
-        httpBuilder.scheme("http").host("tesla.res.meizu.com").addPathSegment("/igrowth/system/index/v4/index.do");
+        httpBuilder.scheme("https").host("member.meizu.com").addPathSegment("/uc/oauth/memberplusinfo/getdeliveryaddresslist");
         requestBuilder.url(httpBuilder.build());
         Call call = builder.build().newCall(requestBuilder.build());
-        try {
+       /* try {
             Response response = call.execute();
             String result = response.body().source().readUtf8();
             Log.v(TAG, result);
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
         call.enqueue(new Callback() {
             @Override
