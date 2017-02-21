@@ -18,7 +18,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".gif.GifTestActivity"
+            android:name=".glide.GifTestActivity"
             android:label="GifTest" >
             <intent-filter>
                 <action android:name="COM.TEST.GIF" />

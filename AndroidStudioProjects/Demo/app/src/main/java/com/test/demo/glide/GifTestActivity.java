@@ -1,4 +1,4 @@
-package com.test.demo.gif;
+package com.test.demo.glide;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
