@@ -11,6 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
+import rx.functions.Func1;
 import rx.schedulers.Schedulers;
 
 /**
@@ -31,6 +32,15 @@ public class RetrofitUtil {
 
         r.subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
+                .map(new Func1<List<Repo>, List<Repo>>() {
+                    @Override
+                    public List<Repo> call(List<Repo> repos) {
+                        for (int i = 0; i < repos.size(); i++) {
+                            repos.get(i).extension = i + 100;
+                        }
+                        return repos;
+                    }
+                })
                 .subscribe(new Subscriber<List<Repo>>() {
                     @Override
                     public void onCompleted() {

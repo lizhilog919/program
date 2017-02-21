@@ -68,7 +68,7 @@ public class ObservableUtil {
             }
         });
 
-        Observable.interval(1, TimeUnit.SECONDS, Schedulers.io()).subscribe(new Subscriber<Long>() {
+        Observable.interval(100, TimeUnit.MILLISECONDS, Schedulers.io()).subscribe(new Subscriber<Long>() {
             @Override
             public void onCompleted() {
 
@@ -81,7 +81,7 @@ public class ObservableUtil {
 
             @Override
             public void onNext(Long aLong) {
-                System.out.println("on next : " + aLong);
+                System.out.println("on next : " + aLong.intValue());
 
             }
         });

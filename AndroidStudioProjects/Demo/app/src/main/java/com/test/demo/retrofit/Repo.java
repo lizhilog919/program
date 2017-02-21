@@ -9,6 +9,7 @@ public class Repo {
     public String name;
     public String full_name;
     public String url;
+    public int extension;
 
     public long getId() {
         return id;

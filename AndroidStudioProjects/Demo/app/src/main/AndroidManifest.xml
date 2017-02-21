@@ -37,13 +37,29 @@
         </activity>
         <activity
             android:name=".retrofit.RetrofitActivity"
-            android:label="@string/title_activity_retrofit">
+            android:label="@string/title_activity_retrofit" >
             <intent-filter>
                 <action android:name="COM.TEST.RETROFIT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".aidl.AidlActivity"
+            android:label="@string/title_activity_aidl"
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="COM.TEST.AIDL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".aidl.RouteService">
+            <intent-filter>
+                <action android:name="test.aidl"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

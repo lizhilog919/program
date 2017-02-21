@@ -2,4 +2,5 @@
     <string name="app_name">Demo</string>
     <string name="title_activity_gif_test">GifTestActivity</string>
     <string name="title_activity_retrofit">RetrofitActivity</string>
+    <string name="title_activity_aidl">AidlActivity</string>
 </resources>
