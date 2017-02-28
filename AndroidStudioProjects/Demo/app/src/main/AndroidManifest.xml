@@ -19,7 +19,8 @@
         </activity>
         <activity
             android:name=".glide.GifTestActivity"
-            android:label="GifTest" >
+            android:label="GifTest"
+            android:launchMode="singleTask" >
             <intent-filter>
                 <action android:name="COM.TEST.GIF" />
 
@@ -55,11 +56,24 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".aidl.RouteService">
+        <service android:name=".aidl.RouteService" >
             <intent-filter>
-                <action android:name="test.aidl"/>
+                <action android:name="test.aidl" />
             </intent-filter>
         </service>
+
+        <activity android:name=".glide.TestActivity" >
+        </activity>
+        <activity
+            android:name=".volley.VolleyTestActivity"
+            android:label="@string/title_activity_volley_test"
+            android:theme="@style/AppTheme" >
+            <intent-filter>
+                <action android:name="COM.TEST.VOLLEY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
