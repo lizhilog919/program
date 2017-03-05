@@ -2,7 +2,6 @@ package com.test.demo.okhttp;
 
 import android.util.Log;
 
-import java.io.File;
 import java.io.IOException;
 
 import okhttp3.Authenticator;
@@ -10,14 +9,11 @@ import okhttp3.CacheControl;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
-import okhttp3.Headers;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
-import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.Route;
@@ -74,14 +70,6 @@ public class OkHttpUtil {
         httpBuilder.scheme("https").host("member.meizu.com").addPathSegment("/uc/oauth/memberplusinfo/getdeliveryaddresslist");
         requestBuilder.url(httpBuilder.build());
         Call call = builder.build().newCall(requestBuilder.build());
-       /* try {
-            Response response = call.execute();
-            String result = response.body().source().readUtf8();
-            Log.v(TAG, result);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -94,11 +82,6 @@ public class OkHttpUtil {
                 Log.v(TAG, result);
             }
         });
-
-        RequestBody requestBody = new MultipartBody.Builder()
-                .addPart(Headers.of("Content-Disposition, form-data; name=title"), RequestBody.create(null, "name"))
-                .addPart(Headers.of("Content-Disposition, form-data; name=file"), RequestBody.create(null, new File("text.txt")))
-                .build();
     }
 
 }
