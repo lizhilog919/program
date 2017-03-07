@@ -1,9 +1,18 @@
 package com.test.demo.test;
 
+import java.io.DataInputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.Reader;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Created by lizhi
@@ -71,5 +80,46 @@ public class NormalTest {
         public void setOld(int old) {
             this.old = old;
         }
+    }
+
+    private void test(){
+        Reader reader;
+        DataInputStream dataInputStream;
+        OutputStream outputStream;
+        InputStream inputStream;
+        Writer writer;
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
+        thread.interrupt();
+        TimeUnit timeUnit = TimeUnit.MILLISECONDS;
+        try {
+            timeUnit.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        ThreadFactory threadFactory = new ThreadFactory() {
+            @Override
+            public Thread newThread(Runnable r) {
+                return null;
+            }
+        };
+        ExecutorService executorService = Executors.newCachedThreadPool(new ThreadFactory() {
+            @Override
+            public Thread newThread(Runnable r) {
+                Thread thread1 = new Thread(r);
+                thread1.setDaemon(true);
+                return thread1;
+            }
+        });
+        executorService.execute(new Runnable() {
+            @Override
+            public void run() {
+
+            }
+        });
     }
 }
