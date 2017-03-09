@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(getHashMap("RetrofitTest","COM.TEST.RETROFIT"));
         list.add(getHashMap("AIDL","COM.TEST.AIDL"));
         list.add(getHashMap("VOLLEY","COM.TEST.VOLLEY"));
+        list.add(getHashMap("NORMAL_TEST","COM.TEST.NORMAL_TEST"));
         return list;
     }
 

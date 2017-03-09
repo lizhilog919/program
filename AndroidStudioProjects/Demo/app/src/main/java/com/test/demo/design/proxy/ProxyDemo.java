@@ -1,4 +1,4 @@
-package com.test.demo.design;
+package com.test.demo.design.proxy;
 
 /**
  * Created by lizhi
