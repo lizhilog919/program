@@ -1,4 +1,4 @@
-package com.test.demo.okhttp;
+package com.test.demo.http.okhttp;
 
 import org.junit.Test;
 

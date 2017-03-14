@@ -1,6 +1,7 @@
 package com.test.demo.design.single;
 
 /**
+ * 推荐方式
  * Created by lizhilog0919 on 2017/3/9.
  */
 

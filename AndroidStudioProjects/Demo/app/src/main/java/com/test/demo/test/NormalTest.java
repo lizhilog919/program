@@ -6,9 +6,15 @@ import java.io.OutputStream;
 import java.io.Reader;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Stack;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
@@ -121,5 +127,38 @@ public class NormalTest {
 
             }
         });
+    }
+
+    public static interface Generator<T>{
+        T next();
+    }
+
+    public static class IntegerGenerator implements Generator<Integer>{
+
+        private int num = 0;
+        List<Integer> a;
+
+        @Override
+        public Integer next() {
+            return num++;
+        }
+
+        public void test(List<Integer> b){
+            Collection<Integer> collection;
+            Map<Integer,Integer> map;
+        }
+         public void test(float b){
+             Stack stack;
+             PriorityQueue<Float> queue = new PriorityQueue<>(12, new Comparator<Float>() {
+                 @Override
+                 public int compare(Float aFloat, Float t1) {
+                     return 0;
+                 }
+             });
+         }
+
+       /* public void test(List<Float> c){
+
+        }*/
     }
 }

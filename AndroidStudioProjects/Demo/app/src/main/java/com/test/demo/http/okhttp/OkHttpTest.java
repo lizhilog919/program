@@ -1,4 +1,4 @@
-package com.test.demo.okhttp;
+package com.test.demo.http.okhttp;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

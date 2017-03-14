@@ -83,6 +83,16 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity android:name=".eventbus.EventBusActivity"
+            android:label="EventBus">
+            <intent-filter>
+                <action android:name="COM.TEST.EVENT_BUS"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".eventbus.SendMessageActivity">
+        </activity>
     </application>
 
 </manifest>
