@@ -12,6 +12,7 @@ import com.test.demo.R;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 public class EventBusActivity extends BaseActivity implements View.OnClickListener{
 
@@ -29,27 +30,27 @@ public class EventBusActivity extends BaseActivity implements View.OnClickListen
         super.onDestroy();
     }
 
-    @Subscribe
-    public void onEvent(MessageEvent messageEvent){
-        Log.v("event_bus: ", "receiver thread onEvent: "+Thread.currentThread().getId());
+    @Subscribe(threadMode = ThreadMode.POSTING)
+    public void onEvent1(MessageEvent messageEvent){
+        Log.v("event_bus: ", Thread.currentThread().getStackTrace()[2].getMethodName() + " : " +Thread.currentThread().getId());
         Toast.makeText(this,"on reacted: " + messageEvent.message,Toast.LENGTH_SHORT).show();
     }
 
-    @Subscribe
-    public void onEventMainThread(MessageEvent messageEvent){
-        Log.v("event_bus: ", "receiver thread onEventMainThread: "+Thread.currentThread().getId());
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent2(MessageEvent messageEvent){
+        Log.v("event_bus: ", Thread.currentThread().getStackTrace()[2].getMethodName() + " : "+Thread.currentThread().getId());
         Toast.makeText(this,"on reacted: " + messageEvent.message,Toast.LENGTH_SHORT).show();
     }
 
-    @Subscribe
-    public void onEventBackgroundThread(MessageEvent messageEvent){
-        Log.v("event_bus: ", "receiver thread onEventBackgroundThread: "+Thread.currentThread().getId());
+    @Subscribe(threadMode = ThreadMode.BACKGROUND)
+    public void onEvent3(MessageEvent messageEvent){
+        Log.v("event_bus: ", Thread.currentThread().getStackTrace()[2].getMethodName() + " : "+Thread.currentThread().getId());
         Toast.makeText(this,"on reacted: " + messageEvent.message,Toast.LENGTH_SHORT).show();
     }
 
-    @Subscribe
-    public void onEventSync(MessageEvent messageEvent){
-        Log.v("event_bus: ", "receiver thread onEventSync: "+Thread.currentThread().getId());
+    @Subscribe(threadMode = ThreadMode.ASYNC)
+    public void onEvent4(MessageEvent messageEvent){
+        Log.v("event_bus: ", Thread.currentThread().getStackTrace()[2].getMethodName() + " : "+Thread.currentThread().getId());
         Toast.makeText(this,"on reacted: " + messageEvent.message,Toast.LENGTH_SHORT).show();
     }
 

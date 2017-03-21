@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         list.add(getHashMap("VOLLEY","COM.TEST.VOLLEY"));
         list.add(getHashMap("NORMAL_TEST","COM.TEST.NORMAL_TEST"));
         list.add(getHashMap("EventBus","COM.TEST.EVENT_BUS"));
+        list.add(getHashMap("Socket","COM.TEST.SOCKET"));
+        list.add(getHashMap("Notification","COM.TEST.REMOTEVIEWS"));
         return list;
     }
 

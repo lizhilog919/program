@@ -83,7 +83,8 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".eventbus.EventBusActivity"
+        <activity
+            android:name=".eventbus.EventBusActivity"
             android:label="EventBus">
             <intent-filter>
                 <action android:name="COM.TEST.EVENT_BUS"/>
@@ -92,6 +93,21 @@
             </intent-filter>
         </activity>
         <activity android:name=".eventbus.SendMessageActivity">
+        </activity>
+        <activity android:name=".http.socket.ClientSocketActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.SOCKET"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".remoteview.NotificationActivity"
+                  android:label="Notification">
+            <intent-filter>
+                <action android:name="COM.TEST.REMOTEVIEWS"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
         </activity>
     </application>
 
