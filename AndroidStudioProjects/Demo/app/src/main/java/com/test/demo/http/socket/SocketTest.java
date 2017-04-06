@@ -28,7 +28,7 @@ public class SocketTest {
         ExecutorService service = Executors.newCachedThreadPool();
         System.out.println("ip: " + getLocalIpAddress());
         try {
-            ServerSocket serverSocket = new ServerSocket(1680);
+            ServerSocket serverSocket = new ServerSocket(1888);
             Socket socket = serverSocket.accept();
             service.execute(new SocketRunnable(socket));
 

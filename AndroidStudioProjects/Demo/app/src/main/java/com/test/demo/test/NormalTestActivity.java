@@ -1,5 +1,6 @@
 package com.test.demo.test;
 
+import android.content.SharedPreferences;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -32,6 +33,18 @@ public class NormalTestActivity extends AppCompatActivity {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
+    }
+
+    public void read(){
+        SharedPreferences preferences = getSharedPreferences("file_name",MODE_PRIVATE);
+        int c = preferences.getInt("key",0);
+    }
+
+    public void write(){
+        SharedPreferences preferences = getSharedPreferences("file_name",MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("key",1);
+        editor.commit();
     }
 
 }

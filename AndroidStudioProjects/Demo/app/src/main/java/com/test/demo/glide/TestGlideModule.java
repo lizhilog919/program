@@ -5,10 +5,13 @@ import android.content.Context;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.load.DecodeFormat;
+import com.bumptech.glide.load.data.DataFetcher;
+import com.bumptech.glide.load.data.HttpUrlFetcher;
 import com.bumptech.glide.load.engine.bitmap_recycle.LruBitmapPool;
 import com.bumptech.glide.load.engine.cache.InternalCacheDiskCacheFactory;
 import com.bumptech.glide.load.engine.cache.LruResourceCache;
 import com.bumptech.glide.load.model.GenericLoaderFactory;
+import com.bumptech.glide.load.model.GlideUrl;
 import com.bumptech.glide.load.model.ModelLoader;
 import com.bumptech.glide.load.model.ModelLoaderFactory;
 import com.bumptech.glide.module.GlideModule;
@@ -34,12 +37,16 @@ public class TestGlideModule implements GlideModule {
         glide.register(String.class, InputStream.class, new ModelLoaderFactory<String, InputStream>() {
             @Override
             public ModelLoader<String, InputStream> build(Context context, GenericLoaderFactory factories) {
-                return null;
+                return new ModelLoader<String, InputStream>() {
+                    @Override
+                    public DataFetcher<InputStream> getResourceFetcher(String model, int width, int height) {
+                        return new HttpUrlFetcher(new GlideUrl(model));
+                    }
+                };
             }
 
             @Override
             public void teardown() {
-
             }
         });
     }

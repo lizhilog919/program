@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<books>
+    <book>
+        <id>1</id>
+        <name>Java编程思想</name>
+        <date>2014/12/23</date>
+    </book>
+    <book>
+        <id>2</id>
+        <name>疯狂java</name>
+        <date>2015/3/23</date>
+    </book>
+    <book>
+        <id>3</id>
+        <name>游戏开发</name>
+        <date>2012/3/25</date>
+    </book>
+</books>

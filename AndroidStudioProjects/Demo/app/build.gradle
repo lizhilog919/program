@@ -35,4 +35,5 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.mcxiaoke.volley:library:1.0.19'
     compile files('src/main/libs/sqlite-jdbc-3.7.2.jar')
+    compile 'com.squareup.picasso:picasso:2.5.2'
 }

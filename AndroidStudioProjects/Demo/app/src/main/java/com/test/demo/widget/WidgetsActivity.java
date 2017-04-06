@@ -1,4 +1,4 @@
-package com.test.demo;
+package com.test.demo.widget;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,18 +8,20 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.test.demo.R;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class WidgetsActivity extends AppCompatActivity {
 
     ListView mListView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_widgets);
         initView();
     }
 
@@ -36,18 +38,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private List<HashMap<String,String>> getList(){
-        List<HashMap<String,String>> list = new ArrayList<>();
-        list.add(getHashMap("GifTest","COM.TEST.GIF"));
-        list.add(getHashMap("OkioTest","COM.TEST.OKIO"));
-        list.add(getHashMap("RetrofitTest","COM.TEST.RETROFIT"));
-        list.add(getHashMap("Aidl","COM.TEST.AIDL"));
-        list.add(getHashMap("Volley","COM.TEST.VOLLEY"));
-        list.add(getHashMap("Normal Test","COM.TEST.NORMAL_TEST"));
-        list.add(getHashMap("EventBus","COM.TEST.EVENT_BUS"));
-        list.add(getHashMap("Socket","COM.TEST.SOCKET"));
-        list.add(getHashMap("Notification","COM.TEST.REMOTEVIEWS"));
-        list.add(getHashMap("Xml parser","COM.TEST.XML_PARSER"));
-        list.add(getHashMap("Widgets","COM.TEST.WIDGETS"));
+        List<HashMap<String,String>> list = new ArrayList<>();;
+        list.add(getHashMap("NumberPicker","COM.TEST.NUMBER_PICKER"));
+        list.add(getHashMap("ScrollView","COM.TEST.SCROLL_VIEW"));
         return list;
     }
 

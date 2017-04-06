@@ -101,10 +101,41 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
-        <activity android:name=".remoteview.NotificationActivity"
-                  android:label="Notification">
+        <activity
+            android:name=".remoteview.NotificationActivity"
+            android:label="Notification">
             <intent-filter>
                 <action android:name="COM.TEST.REMOTEVIEWS"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".xml.XmlParserActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.XML_PARSER"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.NumberPickerActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.NUMBER_PICKER"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".encrypt.EncryptActivity">
+        </activity>
+        <activity android:name=".widget.WidgetsActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.WIDGETS"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.ScrollViewActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.SCROLL_VIEW"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>

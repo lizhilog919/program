@@ -1,5 +1,7 @@
 package com.test.demo.test;
 
+import android.content.SharedPreferences;
+
 import java.io.DataInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -86,6 +88,7 @@ public class NormalTest {
         public void setOld(int old) {
             this.old = old;
         }
+
     }
 
     private void test(){
@@ -160,5 +163,9 @@ public class NormalTest {
        /* public void test(List<Float> c){
 
         }*/
+    }
+
+    public class Inner{
+        public String s = "";
     }
 }

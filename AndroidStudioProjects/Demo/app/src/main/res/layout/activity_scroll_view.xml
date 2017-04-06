@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.test.demo.widget.ScrollViewActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_margin="10dip"
+                android:layout_weight="1"
+                android:layout_width="0dip"
+                android:layout_height="200dip"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

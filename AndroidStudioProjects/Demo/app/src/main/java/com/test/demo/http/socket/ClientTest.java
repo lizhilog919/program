@@ -20,7 +20,7 @@ public class ClientTest {
             public void run() {
                 Socket socket = null;
                 try {
-                    socket = new Socket("169.254.239.115",1680);
+                    socket = new Socket("172.29.144.193",1888);
                     PrintWriter writer = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())));
                     while (true){
                         try {
