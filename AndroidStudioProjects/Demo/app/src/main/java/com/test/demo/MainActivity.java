@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initView();
+        toastMaxMemory();
     }
 
     private void initView(){
@@ -48,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(getHashMap("Notification","COM.TEST.REMOTEVIEWS"));
         list.add(getHashMap("Xml parser","COM.TEST.XML_PARSER"));
         list.add(getHashMap("Widgets","COM.TEST.WIDGETS"));
+        list.add(getHashMap("Bluetooth","COM.TEST.BLUETOOTH"));
         return list;
     }
 
@@ -56,5 +59,10 @@ public class MainActivity extends AppCompatActivity {
         hashMap.put("name",name);
         hashMap.put("action",action);
         return hashMap;
+    }
+
+    private void toastMaxMemory(){
+        Runtime runtime = Runtime.getRuntime();
+        Toast.makeText(this,((runtime.maxMemory()/1024)/1024)+"",Toast.LENGTH_SHORT).show();
     }
 }

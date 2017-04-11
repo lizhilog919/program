@@ -41,6 +41,8 @@ public class WidgetsActivity extends AppCompatActivity {
         List<HashMap<String,String>> list = new ArrayList<>();;
         list.add(getHashMap("NumberPicker","COM.TEST.NUMBER_PICKER"));
         list.add(getHashMap("ScrollView","COM.TEST.SCROLL_VIEW"));
+        list.add(getHashMap("HorizonScrollConflict","COM.TEST.HORIZON_SCROLL"));
+        list.add(getHashMap("HorizonScrollConflict2","COM.TEST.HORIZON_SCROLL_2"));
         return list;
     }
 

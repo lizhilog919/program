@@ -10,12 +10,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.squareup.picasso.Picasso;
+import com.test.demo.BaseActivity;
 import com.test.demo.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScrollViewActivity extends AppCompatActivity {
+public class ScrollViewActivity extends BaseActivity {
 
     ViewPager mViewPager;
     PagerAdapter mAdapter;

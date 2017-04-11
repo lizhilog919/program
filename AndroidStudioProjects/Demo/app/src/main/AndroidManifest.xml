@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.test.demo">
 
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
@@ -136,6 +138,31 @@
         <activity android:name=".widget.ScrollViewActivity">
             <intent-filter>
                 <action android:name="COM.TEST.SCROLL_VIEW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".framework.FrameworkActivity">
+        </activity>
+        <activity android:name=".framework.BluetoothActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.BLUETOOTH"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.SlideConflictActivity">
+        </activity>
+        <activity android:name=".widget.HorizonScrollActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.HORIZON_SCROLL"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.HorizonScroll2Activity">
+            <intent-filter>
+                <action android:name="COM.TEST.HORIZON_SCROLL_2"/>
 
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
