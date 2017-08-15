@@ -27,7 +27,7 @@ public class Algorithm1 {
 
         @Override
         public void result(int[] data, int N) {
-            TreeMap<Integer, Integer> hashMap = new TreeMap<>();
+            HashMap<Integer, Integer> hashMap = new HashMap<>();
             for (int i = 0; i < data.length; i++) {
                 hashMap.put(N - data[i],data[i]);
             }

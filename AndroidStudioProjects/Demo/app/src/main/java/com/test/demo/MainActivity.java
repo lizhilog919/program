@@ -3,6 +3,7 @@ package com.test.demo;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -51,6 +52,12 @@ public class MainActivity extends AppCompatActivity {
         list.add(getHashMap("Xml parser","COM.TEST.XML_PARSER"));
         list.add(getHashMap("Widgets","COM.TEST.WIDGETS"));
         list.add(getHashMap("Bluetooth","COM.TEST.BLUETOOTH"));
+        list.add(getHashMap("ThreadTest","COM.TEST.THREAD_TEST"));
+        list.add(getHashMap("Camera","COM.TEST.CAMERA"));
+        list.add(getHashMap("HeartTest","COM.TEST.HEART"));
+        list.add(getHashMap("FallBallTest","COM.TEST.BALL"));
+        list.add(getHashMap("BowTest","COM.TEST.BOW"));
+
         return list;
     }
 

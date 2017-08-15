@@ -12,6 +12,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.TreeMap;
 import java.util.Vector;
 
 /**
@@ -31,8 +33,11 @@ public class VectorTest {
             System.out.print(iterator.next() + " ");
         }
 
+        ArrayList<String> arrayList;
+        LinkedList<String> linkedList;
         HashSet<String> hashSet;
         HashMap<String,String> hashMap;
+        TreeMap<String,String> treeMap;
         Hashtable<String,String> hashtable;
         ByteArrayInputStream inputStream;
         ByteArrayOutputStream outputStream;

@@ -1,5 +1,6 @@
 package com.test.demo.glide;
 
+import android.app.ActivityManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

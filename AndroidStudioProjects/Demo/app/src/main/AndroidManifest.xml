@@ -7,6 +7,9 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-feature android:name="android.hardware.camera" android:required="true"/>
+    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
 
     <application
         android:allowBackup="true"
@@ -167,6 +170,44 @@
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
         </activity>
+        <activity android:name=".thread.ThreadTestActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.THREAD_TEST"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".camera.CameraActivity"
+            android:theme="@style/AppTheme.NoActionBar"
+            >
+            <intent-filter>
+                <action android:name="COM.TEST.CAMERA"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity> <activity android:name=".bezier.HeartActivity">
+        <intent-filter>
+            <action android:name="COM.TEST.HEART"/>
+
+            <category android:name="android.intent.category.DEFAULT"/>
+        </intent-filter>
+
+    </activity>
+        <activity android:name=".bezier.FallBallActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.BALL"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".bezier.BowActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.BOW"/>
+
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>

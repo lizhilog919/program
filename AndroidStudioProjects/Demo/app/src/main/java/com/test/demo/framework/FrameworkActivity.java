@@ -7,6 +7,7 @@ import android.app.AlarmManager;
 import android.app.NotificationManager;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothManager;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.os.PowerManager;
 import android.os.storage.StorageManager;
@@ -17,6 +18,8 @@ import android.view.WindowManager;
 import android.view.accessibility.AccessibilityManager;
 
 import com.test.demo.R;
+
+import java.util.List;
 
 public class FrameworkActivity extends AppCompatActivity {
 
@@ -32,6 +35,12 @@ public class FrameworkActivity extends AppCompatActivity {
 
     private void testActivityManager(){
         ActivityManager activityManager = (ActivityManager) getSystemService(ACTIVITY_SERVICE);
+        List<ActivityManager.RunningServiceInfo> runningServiceInfoList = activityManager.getRunningServices(10);
+        List<ActivityManager.RunningAppProcessInfo> runningAppProcessInfoList = activityManager.getRunningAppProcesses();
+    }
+
+    private void testPackageManager(){
+        PackageManager packageManager = getPackageManager();
     }
 
     private void testPowerManager(){
