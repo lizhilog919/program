@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.test.demo">
+    package="com.test.demo">
 
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera" android:required="true"/>
-    <uses-feature android:name="android.hardware.camera.autofocus" android:required="false"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -19,9 +26,9 @@
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
@@ -29,27 +36,27 @@
             android:label="GifTest"
             android:launchMode="singleTask">
             <intent-filter>
-                <action android:name="COM.TEST.GIF"/>
+                <action android:name="COM.TEST.GIF" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".io.okio.OkioActivity"
             android:label="OkioTest">
             <intent-filter>
-                <action android:name="COM.TEST.OKIO"/>
+                <action android:name="COM.TEST.OKIO" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".retrofit.RetrofitActivity"
             android:label="@string/title_activity_retrofit">
             <intent-filter>
-                <action android:name="COM.TEST.RETROFIT"/>
+                <action android:name="COM.TEST.RETROFIT" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
@@ -57,157 +64,165 @@
             android:label="@string/title_activity_aidl"
             android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="COM.TEST.AIDL"/>
+                <action android:name="COM.TEST.AIDL" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
 
         <service android:name=".aidl.RouteService">
             <intent-filter>
-                <action android:name="test.aidl"/>
+                <action android:name="test.aidl" />
             </intent-filter>
         </service>
 
-        <activity android:name=".glide.TestActivity">
-        </activity>
+        <activity android:name=".glide.TestActivity" />
         <activity
             android:name=".volley.VolleyTestActivity"
             android:label="@string/title_activity_volley_test"
             android:theme="@style/AppTheme">
             <intent-filter>
-                <action android:name="COM.TEST.VOLLEY"/>
+                <action android:name="COM.TEST.VOLLEY" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".test.NormalTestActivity">
             <intent-filter>
-                <action android:name="COM.TEST.NORMAL_TEST"/>
+                <action android:name="COM.TEST.NORMAL_TEST" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".eventbus.EventBusActivity"
             android:label="EventBus">
             <intent-filter>
-                <action android:name="COM.TEST.EVENT_BUS"/>
+                <action android:name="COM.TEST.EVENT_BUS" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".eventbus.SendMessageActivity">
-        </activity>
+        <activity android:name=".eventbus.SendMessageActivity" />
         <activity android:name=".http.socket.ClientSocketActivity">
             <intent-filter>
-                <action android:name="COM.TEST.SOCKET"/>
+                <action android:name="COM.TEST.SOCKET" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".remoteview.NotificationActivity"
             android:label="Notification">
             <intent-filter>
-                <action android:name="COM.TEST.REMOTEVIEWS"/>
+                <action android:name="COM.TEST.REMOTEVIEWS" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".xml.XmlParserActivity">
             <intent-filter>
-                <action android:name="COM.TEST.XML_PARSER"/>
+                <action android:name="COM.TEST.XML_PARSER" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".widget.NumberPickerActivity">
             <intent-filter>
-                <action android:name="COM.TEST.NUMBER_PICKER"/>
+                <action android:name="COM.TEST.NUMBER_PICKER" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".encrypt.EncryptActivity">
-        </activity>
+        <activity android:name=".encrypt.EncryptActivity" />
         <activity android:name=".widget.WidgetsActivity">
             <intent-filter>
-                <action android:name="COM.TEST.WIDGETS"/>
+                <action android:name="COM.TEST.WIDGETS" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".widget.ScrollViewActivity">
             <intent-filter>
-                <action android:name="COM.TEST.SCROLL_VIEW"/>
+                <action android:name="COM.TEST.SCROLL_VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".framework.FrameworkActivity">
-        </activity>
+        <activity android:name=".framework.FrameworkActivity" />
         <activity android:name=".framework.BluetoothActivity">
             <intent-filter>
-                <action android:name="COM.TEST.BLUETOOTH"/>
+                <action android:name="COM.TEST.BLUETOOTH" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".widget.SlideConflictActivity">
-        </activity>
+        <activity android:name=".widget.SlideConflictActivity" />
         <activity android:name=".widget.HorizonScrollActivity">
             <intent-filter>
-                <action android:name="COM.TEST.HORIZON_SCROLL"/>
+                <action android:name="COM.TEST.HORIZON_SCROLL" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".widget.HorizonScroll2Activity">
             <intent-filter>
-                <action android:name="COM.TEST.HORIZON_SCROLL_2"/>
+                <action android:name="COM.TEST.HORIZON_SCROLL_2" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".thread.ThreadTestActivity">
             <intent-filter>
-                <action android:name="COM.TEST.THREAD_TEST"/>
+                <action android:name="COM.TEST.THREAD_TEST" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity android:name=".camera.CameraActivity"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+        <activity
+            android:name=".camera.CameraActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="COM.TEST.CAMERA"/>
+                <action android:name="COM.TEST.CAMERA" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity> <activity android:name=".bezier.HeartActivity">
-        <intent-filter>
-            <action android:name="COM.TEST.HEART"/>
+        </activity>
+        <activity android:name=".bezier.HeartActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.HEART" />
 
-            <category android:name="android.intent.category.DEFAULT"/>
-        </intent-filter>
-
-    </activity>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity android:name=".bezier.FallBallActivity">
             <intent-filter>
-                <action android:name="COM.TEST.BALL"/>
+                <action android:name="COM.TEST.BALL" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity android:name=".bezier.BowActivity">
             <intent-filter>
-                <action android:name="COM.TEST.BOW"/>
+                <action android:name="COM.TEST.BOW" />
 
-                <category android:name="android.intent.category.DEFAULT"/>
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".algorithm.JniAlgorithmActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.JNI_ALGORITHM" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".opengl.GLActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.OPENGL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

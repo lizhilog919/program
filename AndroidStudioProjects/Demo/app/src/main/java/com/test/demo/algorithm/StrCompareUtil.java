@@ -62,8 +62,8 @@ public class StrCompareUtil {
     }
 
     public static void main(String[] args){
-        String parent = "csjebfzkbfesvbsejfb";
-        String child = "ejf";
+        String parent = "csjesdffbfzkbfesvbsejfb";
+        String child = "ff";
         System.out.print(sunday(parent, child));
     }
 
