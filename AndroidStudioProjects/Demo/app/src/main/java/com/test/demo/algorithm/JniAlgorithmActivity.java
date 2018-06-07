@@ -26,7 +26,7 @@ public class JniAlgorithmActivity extends Activity implements View.OnClickListen
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.call:
-                nativeInterface.runAlgorithm(2);
+                nativeInterface.runAlgorithm(4);
         }
     }
 }

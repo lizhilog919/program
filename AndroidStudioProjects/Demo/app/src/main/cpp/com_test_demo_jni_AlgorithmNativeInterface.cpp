@@ -1,5 +1,4 @@
 #include "com_test_demo_jni_AlgorithmNativeInterface.h"
-#include "native_algorithm.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -10,18 +9,63 @@ JNIEXPORT void JNICALL Java_com_test_demo_jni_AlgorithmNativeInterface_runAlgori
   {
       switch (id){
           case 0:
-              search_K_from_link();
+              runSearch_K_from_link();
               break;
           case 1:
-              mergeIntLinkList();
+              runMergeIntLinkList();
               break;
           case 2:
               runGetOneNum();
               break;
+          case 3:
+              runFindGreatestSumOfSubArray();
+              break;
+          case 4:
+              runRankArrayToMin();
+              break;
           default:
-              search_K_from_link();
+              break;
       }
   }
+
+void runFindGreatestSumOfSubArray()
+{
+    int data[] = {1,-2,3,10,-4,7,2,-5};
+    LOGV(TAG, "max: %d", FindGreatestSumOfSubArray(data, 8));
+
+}
+
+void runSearch_K_from_link()
+{
+    int data[] = {9,8,7,6,5,4,3,2,1};
+    list_node *node = createIntLinkList(data, 9);
+    printIntLinkList(node);
+    LOGV(TAG, "result: %d", search(node, 8));
+}
+
+void runMergeIntLinkList()
+{
+    int data1[] = {1,3,7,8,12};
+    int data2[] = {2,4,6,11,15,18};
+    list_node *node1 = createIntLinkList(data1, 5);
+    printIntLinkList(node1);
+    list_node *node2 = createIntLinkList(data2, 6);
+    printIntLinkList(node2);
+    printIntLinkList(merge(node1, node2));
+}
+
+void runGetOneNum(){
+    LOGV(TAG, "%d", getOneNum(13));
+}
+
+void runRankArrayToMin()
+{
+    int data[] = {3, 32,321};
+    int *result = rankArrayToMin(data, 3);
+    printIntArrayList(result, 3);
+
+}
+
 
 #ifdef __cplusplus
 }

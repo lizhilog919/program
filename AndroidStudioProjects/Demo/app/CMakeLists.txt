@@ -4,7 +4,9 @@ cmake_minimum_required(VERSION 3.4.1)
 add_library( # Sets the name of the library.
              native-lib
              SHARED
-             src/main/cpp/native_algorithm.cpp
+             src/main/cpp/algorithm.cpp
+             src/main/cpp/data_factory.cpp
+             src/main/cpp/util.cpp
              src/main/cpp/com_test_demo_jni_AlgorithmNativeInterface.cpp)
 
 
