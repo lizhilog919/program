@@ -10,7 +10,13 @@ public class SortUtil {
         Integer[] nums = new Integer[]{2,3,1,4,8,7,15,60,34,43,9};
         selectSort(nums);
         for (int i = 0; i < nums.length; i++) {
-            System.out.print(nums[i]+" ");
+            //System.out.print(nums[i]+" ");
+        }
+
+        Integer[] c = new Integer[]{121,343,242,4211,2342452,345,35465,2321};
+        radixSort(c,c.length,7);
+        for (int i = 0; i < c.length; i++) {
+            System.out.print(c[i]+" ");
         }
     }
 
@@ -75,6 +81,40 @@ public class SortUtil {
             }
             quickSort(data, low, start - 1);
             quickSort(data, start + 1, high);
+        }
+    }
+
+    public static int getDigit(int x, int d){
+        int a[] = {1,10,100,1000,10000,100000,1000000,10000000};
+        return (x/a[d-1])%10;
+    }
+
+    /**
+     * 基数排序
+     */
+    public static void radixSort(Integer[] data, int n, int maxDigit){
+        int radix = 10;
+        int[] count = new int[radix];
+        int[] bucket = new int[n];
+        for(int i=1; i<=maxDigit; i++){
+            for (int j = 0; j < radix; j++) {
+                count[j] = 0;
+            }
+            for (int j = 0; j < n; j++) {
+                int x = getDigit(data[j], i);
+                count[x]++;
+            }
+            for (int j = 1; j < radix; j++) {
+                count[j] = count[j] + count[j-1];
+            }
+            for (int j = n-1; j >=0 ; j--) {
+                int x = getDigit(data[j],i);
+                bucket[count[x]-1] = data[j];
+                count[x]--;
+            }
+            for (int j = 0,m = 0; j < n; j++,m++) {
+                data[j] = bucket[m];
+            }
         }
     }
 
