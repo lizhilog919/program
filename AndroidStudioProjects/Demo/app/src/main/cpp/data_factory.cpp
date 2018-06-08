@@ -50,6 +50,31 @@ void printIntArrayList(int *list, int n){
 }
 
 
+tree_node* createIntTree(int list[], int start, int end){
+    if(list[start] == -1){
+        return NULL;
+    }
+    if(start > end){
+        return NULL;
+    }
+    tree_node *root = (tree_node*)malloc(sizeof(tree_node));
+    root->data = list[start];
+    root->left = createIntTree(list,start +1, (start + 1 + end )/2);
+    root->right = createIntTree(list,(start + 1 + end)/2 + 1, end);
+    return root;
+}
+
+void printIntTree(tree_node* tree){
+    if(tree == NULL){
+        return;
+    }
+    LOGV(TAG, "data: %d", tree->data);
+    printIntTree(tree->right);
+    printIntTree(tree->left);
+
+}
+
+
 #ifdef __cplusplus
 }
 #endif

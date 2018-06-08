@@ -9,8 +9,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <uses-feature android:glEsVersion="0x00020000" android:required="true" />
-
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -219,6 +220,13 @@
         <activity android:name=".opengl.GLActivity">
             <intent-filter>
                 <action android:name="COM.TEST.OPENGL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".widget.RecycelViewTestActivity">
+            <intent-filter>
+                <action android:name="COM.TEST.MY_RECYCLE" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

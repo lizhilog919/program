@@ -25,6 +25,8 @@ void runFindGreatestSumOfSubArray();
 
 void runRankArrayToMin();
 
+void createTree();
+
 #ifdef __cplusplus
 }
 #endif

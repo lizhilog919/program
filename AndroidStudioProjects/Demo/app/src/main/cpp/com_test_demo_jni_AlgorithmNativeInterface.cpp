@@ -23,10 +23,20 @@ JNIEXPORT void JNICALL Java_com_test_demo_jni_AlgorithmNativeInterface_runAlgori
           case 4:
               runRankArrayToMin();
               break;
+          case 5:
+              createTree();
+              break;
           default:
               break;
       }
   }
+
+
+void createTree(){
+    int data[] = {0,1,2,3,-1,-1,4,-1,-1,5,6,-1,-1,-1,-1,-1,7,8,-1,-1,-1,9,10,11,-1,-1,-1,-1,-1,-1,-1};
+    tree_node* root = createIntTree(data,0,30);
+    printIntTree(root);
+}
 
 void runFindGreatestSumOfSubArray()
 {

@@ -1,9 +1,8 @@
 package com.test.demo;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     ListView mListView;
 
@@ -40,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<HashMap<String,String>> getList(){
         List<HashMap<String,String>> list = new ArrayList<>();
+        list.add(getHashMap("MyRecycleView ","COM.TEST.MY_RECYCLE"));
         list.add(getHashMap("Opengl","COM.TEST.OPENGL"));
         list.add(getHashMap("NativeAlgorithm","COM.TEST.JNI_ALGORITHM"));
         list.add(getHashMap("GifTest","COM.TEST.GIF"));
