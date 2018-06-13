@@ -1,0 +1,34 @@
+
+task hello << {
+    println 'hello world'
+}
+
+task test(dependsOn:hello) << {
+    println 'test'
+}
+
+
+hello.dependsOn{
+    tasks.findAll {
+        task -> task.name.endsWith('lib')
+    }
+}
+
+task other_lib<< {
+    description 'now execute other_lib'
+    println('other-lib')
+}
+
+task main_lib(dependsOn: other_lib)  << {
+    description 'now execute main_lib'
+    println('main-lib')
+}
+
+
+
+apply from : 'demo.gradle'
+
+
+
+
+

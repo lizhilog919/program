@@ -1,0 +1,26 @@
+apply plugin: DemoPlugin
+
+greeting {
+    message = 'hello define'
+    greeter = "lizhi"
+}
+
+class DemoPlugin implements Plugin<Project>{
+
+    @Override
+    void apply(Project target) {
+
+        target.extensions.create("greeting", GreetExtensionPlugin)
+
+        target.task("demo")<<{
+            println(target.greeting.greeter)
+            println(target.greeting.message)
+            println('demo from DemoPlugin')
+        }
+    }
+}
+
+class GreetExtensionPlugin{
+    String message
+    String greeter
+}
